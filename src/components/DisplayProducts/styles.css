@@ -1,14 +1,16 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .product {
-    border:1px solid black;
-    max-width: 420px;
-    margin-top: 12px ;
-    margin-bottom: 12px ;
-    padding: 10px 20px;
+	border: 1px solid black;
+	max-width: 420px;
+	margin-top: 12px;
+	margin-bottom: 18px;
+	margin-bottom: 12px;
+	padding: 10px 20px;
 }

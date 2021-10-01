@@ -1,57 +1,66 @@
-import { useState } from "react";
+import { useState } from 'react'
+import { Box, Button, TextField } from '@mui/material'
 
 const CadastreProducts = ({ setProducts, products }) => {
-  const [id, setId] = useState(0);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
-  const [discount, setDiscount] = useState(0);
+	const [id, setId] = useState()
+	const [name, setName] = useState('')
+	const [description, setDescription] = useState('')
+	const [price, setPrice] = useState()
+	const [discount, setDiscount] = useState()
 
-  const addNewProduct = () => {
-    setProducts([
-      ...products,
-      {
-        code: id,
-        name: name,
-        description: description,
-        price: price,
-        discount: discount,
-      },
-    ]);
-  };
+	const addNewProduct = () => {
+		setProducts([
+			...products,
+			{
+				code: id,
+				name: name,
+				description: description,
+				price: price,
+				discount: discount,
+			},
+		])
+	}
 
-  return (
-    <>
-      <div>
-        <input
-          placeholder="id"
-          value={id}
-          onChange={(e) => setId(Number(e.target.value))}
-        />
-        <input
-          placeholder="Nome do produto"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          placeholder="Descrição"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          placeholder="Preço"
-          value={price}
-          onChange={(e) => setPrice(Number(e.target.value))}
-        />
-        <input
-          placeholder="Desconto"
-          value={discount}
-          onChange={(e) => setDiscount(Number(e.target.value))}
-        />
-        <button onClick={addNewProduct}>Adicionar Produtos</button>
-      </div>
-    </>
-  );
-};
+	return (
+		<Box sx={{ display: 'flex', justifyContent: 'center' }}>
+			<Box
+				sx={{
+					marginTop: 10,
+					display: 'flex',
+					flexDirection: 'column',
+					width: 300,
+					alignItems: 'center',
+				}}
+			>
+				<TextField
+					placeholder='id'
+					value={id}
+					onChange={(e) => setId(Number(e.target.value))}
+				/>
+				<TextField
+					placeholder='Nome do produto'
+					value={name}
+					onChange={(e) => setName(e.target.value)}
+				/>
+				<TextField
+					placeholder='Descrição'
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+				/>
+				<TextField
+					placeholder='Preço'
+					value={price}
+					onChange={(e) => setPrice(Number(e.target.value))}
+				/>
+				<TextField
+					placeholder='Desconto'
+					value={discount}
+					onChange={(e) => setDiscount(Number(e.target.value))}
+				/>
+				<Button onClick={addNewProduct}>Adicionar Produtos</Button>
+			</Box>
+		</Box>
+	)
+}
 
-export default CadastreProducts;
+export default CadastreProducts

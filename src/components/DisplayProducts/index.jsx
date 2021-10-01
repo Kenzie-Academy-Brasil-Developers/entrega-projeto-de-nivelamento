@@ -1,22 +1,24 @@
-import "./styles.css";
+import { Card, Typography } from '@mui/material'
+import { Box } from '@mui/system'
+import './styles.css'
 
 const DisplayProducts = ({ products }) => {
-  return (
-    <>
-      <div className="container">
-        {products.map((item, index) => (
-          <div className="product" key={index}>
-            <div>{item.name}</div>
-            <div> {item.description}</div>{" "}
-            <div>
-              Preço: R${item.price}, Desconto: R$
-              {item.discount}
-            </div>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
+	return (
+		<Box>
+			<div className='container'>
+				{products.map((item, index) => (
+					<Card className='product' key={index} sx={{ marginLeft: 2 }}>
+						<Typography>{item.name}</Typography>
+						<Typography> {item.description}</Typography>{' '}
+						<Typography>
+							Preço: R${item.price}, Desconto: R$
+							{item.discount}
+						</Typography>
+					</Card>
+				))}
+			</div>
+		</Box>
+	)
+}
 
-export default DisplayProducts;
+export default DisplayProducts
